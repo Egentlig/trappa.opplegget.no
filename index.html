@@ -55,7 +55,15 @@
 </div>
 
 <div class="content">
-    <h1>NEI</h1>
+    <h1>JA</h1>
+</div>
+
+<div class="content">
+    <h3>MVP: Breat her</h3>
+</div>
+
+<div class="content">
+    <h3>Merk: Ingen pakklabber ble skadet i arbeidet.</h3>
 </div>
 
 <div id="timerWrapper" class="content hide">
@@ -66,10 +74,6 @@
     <p>Trappa i opplegget er en del av <a href="https://ll.opplegget.no">LL Stange</a></p>
 </div>
 
-<div class="content">
-    <a href="/en">English?</a>
-</div>
-
 <script type="application/javascript">
     document.addEventListener("DOMContentLoaded", () => {
         const timerWrapper = document.querySelector("#timerWrapper");
@@ -77,10 +81,10 @@
 
         setInterval(() => {
             const scratch = new Date("2025-01-07T19:45:00Z").getTime();
-            const now = new Date().getTime();
+            const end = new Date("2025-03-30T20:20:00Z").getTime();
 
             // get total seconds between the times
-            var delta = Math.abs(scratch - now) / 1000;
+            var delta = Math.abs(scratch - end) / 1000;
 
             // calculate (and subtract) whole months
             var months = Math.floor(delta / 2629746);
@@ -101,7 +105,7 @@
             // what's left is seconds
             var seconds = Math.floor(delta % 60);  // in theory the modulus is not required
 
-            timerText.innerText = `Trappas beskaffenhet har vært klassifisert (av LL Hobbyverksted) som TG2 i ${months} måned${months !== 1 ? "er" : ""}, ${days} dag${days !== 1 ? "er" : ""}, ${hours} time${hours !== 1 ? "r" : ""}, ${minutes} minutt${minutes !== 1 ? "er" : ""} og ${seconds} sekund${seconds !== 1 ? "er" : ""}`;
+            timerText.innerText = `Trappas beskaffenhet var klassifisert (av LL Hobbyverksted) som TG2 i ${months} måned${months !== 1 ? "er" : ""}, ${days} dag${days !== 1 ? "er" : ""}, ${hours} time${hours !== 1 ? "r" : ""}, ${minutes} minutt${minutes !== 1 ? "er" : ""} og ${seconds} sekund${seconds !== 1 ? "er" : ""}`;
             timerWrapper.classList.remove("hide");
         }, 1000);
     });
